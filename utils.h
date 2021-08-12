@@ -52,7 +52,7 @@ std::string look_up_ip(const std::string& hostname){
     int ret = getaddrinfo(hostname.c_str(), nullptr, &hint, &addrinfos);
     if (ret != 0){
         std::ostringstream msg;
-        msg << "getaddrinfo " << "hostname" << "\"" << hostname << "\" with err: " << gai_strerror(ret);
+        msg << "getaddrinfo " << "hostname " << "\"" << hostname << "\" with err: " << gai_strerror(ret);
         throw std::runtime_error(msg.str());
     }
 
